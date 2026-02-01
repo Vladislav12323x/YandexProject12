@@ -14,10 +14,13 @@ PLAYER_MOVEMENT_SPEED = 5
 
 # Масштаб спрайтов
 CHARACTER_SCALING = 0.04
-TILE_SCALING = 0.5
+TILE_SCALING = 0.8
 ENEMY_SCALING = 1
 HEART_SCALING = 0.5
 COIN_SCALE = 0.07
+
+# Камера
+CAMERA_LERP = 0.01
 
 
 # Константы для направления персонажа

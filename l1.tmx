@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="first.tsx"/>
  <layer id="1" name="platforms" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAoGL/jEyMDwmRFT7CMW8aEIXgL98IIM/IpCvz8D6n9KBn5Oob2PgfofkYGfDLG4BgAPOi04
+   eJxjYBgFo2AUjIJRMAoGL/jEyMDwGYhLmRgY1jMixD5CxYc6eAn0wwsy8CsK/f4MqP8pGfg5hfY+Bup/RAZ+MsTiGgAldC5f
   </data>
  </layer>
  <layer id="4" name="coins" width="30" height="20">
