@@ -41,9 +41,9 @@ class Heart(arcade.Sprite):
     def update_texture(self):
         """Обновление текстуры в зависимости от состояния"""
         if self.active:
-            self.texture = arcade.load_texture("TrueHeart.png")
+            self.texture = arcade.load_texture("textures/TrueHeart.png")
         else:
-            self.texture = arcade.load_texture("FalseHeart.png")
+            self.texture = arcade.load_texture("textures/FalseHeart.png")
     
     def _get_unique_name(self):
         """Генерация уникального имени для текстуры"""
@@ -56,7 +56,7 @@ class Enemy(arcade.Sprite):
         super().__init__()
         self.width = 64
         self.height = 64
-        self.texture = arcade.load_texture("Mob1.png")
+        self.texture = arcade.load_texture("textures/Mob1.png")
         
         self.center_x = x
         self.center_y = y
@@ -84,7 +84,7 @@ class PlayerCharacter(arcade.Sprite):
         self.width = 10
         self.height = 10
         self.character_face_direction = RIGHT_FACING
-        self.stand_right_texture = arcade.load_texture("Mario.png")
+        self.stand_right_texture = arcade.load_texture("textures/Mario.png")
         
         try:
             if os.path.exists("Mario_left.png"):
@@ -100,7 +100,7 @@ class PlayerCharacter(arcade.Sprite):
         # Загрузка текстур для ходьбы
         for i in range(1, 3):
             try:
-                texture = arcade.load_texture(f"Mario.png")
+                texture = arcade.load_texture(f"textures/Mario.png")
             except:
                 texture = self.stand_right_texture
             
@@ -273,7 +273,7 @@ class Level1(GameLevel):
         # Создание земли (основная платформа)
         for x in range(0, 1000, 64):
             # Используем текстуру кирпичей вместо травы
-            wall = arcade.Sprite("brick.png", 0.5)
+            wall = arcade.Sprite("textures/brick.png", 0.5)
             wall.center_x = x
             wall.center_y = 32
             self.wall_list.append(wall)
@@ -287,8 +287,8 @@ class Level1(GameLevel):
         ]
         for x, y in platform_positions:
             for i in range(0, 192, 64):  # 3 блока в длину
-                if os.path.exists("brick1.png"):
-                        wall = arcade.Sprite("brick1.png", 0.3)
+                if os.path.exists("textures/brick1.png"):
+                        wall = arcade.Sprite("textures/brick1.png", 0.3)
                 wall.center_x = x + i
                 wall.center_y = y
                 self.wall_list.append(wall)
@@ -300,8 +300,8 @@ class Level1(GameLevel):
             (930, 250), (960, 250), (990, 250)   # Над третьей платформой
         ]
         for x, y in coin_positions:
-            if os.path.exists("coin.png") or os.path.exists("coin.png"):
-                coin = arcade.Sprite("coin.png", COIN_SCALE)
+            if os.path.exists("textures/coin.png") or os.path.exists("textures/coin.png"):
+                coin = arcade.Sprite("textures/coin.png", COIN_SCALE)
             coin.center_x = x
             coin.center_y = y
             self.coin_list.append(coin)
@@ -313,16 +313,16 @@ class Level1(GameLevel):
             (700, 400)    # Третье облако
         ]
         for x, y in cloud_positions:
-            if os.path.exists("cloud.webp"):
-                cloud = arcade.Sprite("cloud.webp", 0.01)  # Облака обычно меньше
+            if os.path.exists("textures/cloud.webp"):
+                cloud = arcade.Sprite("textures/cloud.webp", 0.01)  # Облака обычно меньше
             cloud.center_x = x
             cloud.center_y = y
             self.cloud_list.append(cloud)
 
         
         # Флаг финиша
-        if os.path.exists("Flag.png"):
-            self.finish_flag = arcade.Sprite("Flag.png", 0.1)
+        if os.path.exists("textures/Flag.png"):
+            self.finish_flag = arcade.Sprite("textures/Flag.png", 0.1)
         self.finish_flag.center_x = 950
         self.finish_flag.center_y = 96
         self.finish_flag_list.append(self.finish_flag)
@@ -341,9 +341,9 @@ class Level2(GameLevel):
         
         # Создание земли
         for x in range(0, 2000, 64):
-            if os.path.exists("grass.png"):
+            if os.path.exists("textures/grass.png"):
                 try:
-                    wall = arcade.Sprite("grass.png", TILE_SCALING)
+                    wall = arcade.Sprite("textures/grass.png", TILE_SCALING)
                 except:
                     wall = create_solid_sprite(64, 64, arcade.color.GREEN)
                     wall.scale = TILE_SCALING
@@ -359,9 +359,9 @@ class Level2(GameLevel):
         platform_positions = [(200, 150), (400, 250), (600, 150), (800, 300), 
                              (1000, 200), (1200, 250), (1400, 150), (1600, 250)]
         for x, y in platform_positions:
-            if os.path.exists("grass.png"):
+            if os.path.exists("textures/grass.png"):
                 try:
-                    wall = arcade.Sprite("grass.png", TILE_SCALING)
+                    wall = arcade.Sprite("textures/grass.png", TILE_SCALING)
                 except:
                     wall = create_solid_sprite(64, 64, arcade.color.BROWN)
                     wall.scale = TILE_SCALING
@@ -377,9 +377,9 @@ class Level2(GameLevel):
         coin_positions = [(200, 200), (400, 300), (600, 200), (800, 350),
                          (1000, 250), (1200, 300), (1400, 200), (1600, 300)]
         for x, y in coin_positions:
-            if os.path.exists("coin.png"):
+            if os.path.exists("textures/coin.png"):
                 try:
-                    coin = arcade.Sprite("coin.png", TILE_SCALING)
+                    coin = arcade.Sprite("textures/coin.png", TILE_SCALING)
                 except:
                     coin = create_solid_sprite(32, 32, arcade.color.GOLD)
                     coin.scale = TILE_SCALING
@@ -398,9 +398,9 @@ class Level2(GameLevel):
             self.enemy_list.append(enemy)
         
         # Флаг финиша
-        if os.path.exists("Flag.png"):
+        if os.path.exists("textures/Flag.png"):
             try:
-                self.finish_flag = arcade.Sprite("Flag.png", TILE_SCALING)
+                self.finish_flag = arcade.Sprite("textures/Flag.png", TILE_SCALING)
             except:
                 self.finish_flag = create_solid_sprite(64, 128, arcade.color.RED)
                 self.finish_flag.scale = TILE_SCALING
