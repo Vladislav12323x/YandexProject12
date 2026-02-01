@@ -22,8 +22,8 @@ class MainGame(arcade.View):
 
         # Создание игрока
         self.player = PlayerCharacter()
-        self.player.center_x = 64
-        self.player.center_y = 128
+        self.player.center_x = 128
+        self.player.center_y = 192
 
         self.time_elapsed = datetime.now().second - 3
 

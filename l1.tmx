@@ -3,27 +3,27 @@
  <tileset firstgid="1" source="first.tsx"/>
  <layer id="1" name="platforms" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGATawA4h34pHbDsW41AxmsB6I11ERbyDS3jVAvJqKeO0gtRcALM8urg==
+   eJxjYBgFo2AUjIJRMAoGL/jEyMDwmRFT7CMW8aEIXgL98IIM/IpCvz8D6n9KBn5Oob2PgfofkYGfDLG4BgAPOi04
   </data>
  </layer>
  <layer id="4" name="coins" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAoGN2iCYnxy+NQMdTBc/TWcAQDcmAOP
+   eJxjYBgFo2AUjIJRMAoIgz2MEIxNDF18FIyCkQ4AlhQDsg==
   </data>
  </layer>
  <layer id="5" name="other" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRQC5wA2IXKO01wG4ZBaNgFAweAACJvAEb
+   eJxjYBgFo2AUjIJRQAloYGRgqGOE0C2MA+2aUTAKRsFgAABGJAIH
   </data>
  </layer>
  <layer id="6" name="flags" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwXAAZgPtgFEABwBc6AA3
+   eJxjYBgFo2AUjIJRMApGATmggHGgXTAKBisAAPe7AHI=
   </data>
  </layer>
  <layer id="7" name="enemies" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwWAAYnTWNwpoBwBToAAt
+   eJxjYBgFo2AUjIJRMApGAT4QwDjQLhgFQw0AALvTAFI=
   </data>
  </layer>
 </map>
