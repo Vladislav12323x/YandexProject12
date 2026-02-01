@@ -14,9 +14,9 @@ class Heart(arcade.Sprite):
     def update_texture(self):
         """Обновление текстуры в зависимости от состояния"""
         if self.active:
-            self.texture = arcade.load_texture("../textures/star.png")
+            self.texture = arcade.load_texture("../textures/hud_heart.png")
         else:
-            self.texture = arcade.load_texture("../textures/star_outline.png")
+            self.texture = arcade.load_texture("../textures/hud_heart_empty.png")
 
     def _get_unique_name(self):
         """Генерация уникального имени для текстуры"""

@@ -74,8 +74,8 @@ class MainGame(arcade.View):
         self.hearts_list = arcade.SpriteList()
         for i in range(3):
             heart = Heart(active=(i < self.lives))
-            heart.center_x = 30 + i * 40
-            heart.center_y = SCREEN_HEIGHT - 20
+            heart.center_x = 30 + i * 50
+            heart.center_y = SCREEN_HEIGHT - 30
             self.hearts_list.append(heart)
 
         # Сброс очков при начале новой игры
@@ -117,8 +117,8 @@ class MainGame(arcade.View):
             self.hearts_list = arcade.SpriteList()
             for i in range(3):
                 heart = Heart(active=(i < self.lives))
-                heart.center_x = 30 + i * 40
-                heart.center_y = SCREEN_HEIGHT - 20
+                heart.center_x = 30 + i * 50
+                heart.center_y = SCREEN_HEIGHT - 30
                 self.hearts_list.append(heart)
         if self.lives <= 0:
             self.setup()
