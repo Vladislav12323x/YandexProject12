@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="8" nextobjectid="1">
+ <tileset firstgid="1" source="first.tsx"/>
+ <layer id="1" name="platforms" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGATawA4h34pHbDsW41AxmsB6I11ERbyDS3jVAvJqKeO0gtRcALM8urg==
+  </data>
+ </layer>
+ <layer id="4" name="coins" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGN2iCYnxy+NQMdTBc/TWcAQDcmAOP
+  </data>
+ </layer>
+ <layer id="5" name="other" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQC5wA2IXKO01wG4ZBaNgFAweAACJvAEb
+  </data>
+ </layer>
+ <layer id="6" name="flags" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwXAAZgPtgFEABwBc6AA3
+  </data>
+ </layer>
+ <layer id="7" name="enemies" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwWAAYnTWNwpoBwBToAAt
+  </data>
+ </layer>
+</map>
