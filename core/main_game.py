@@ -5,6 +5,7 @@ import arcade.color
 from arcade import Camera2D
 from pyglet.graphics import Batch
 
+from core.shader import CustomCRT
 from models import Heart, PlayerCharacter
 from scenes import Level1, Level2, CompleteMenu
 from settings.consts import *
@@ -50,6 +51,14 @@ class MainGame(arcade.View):
         self.levels = [Level1(self), Level2(self)]
         self.batch = Batch()
 
+        p_width, p_height = self.window.get_size()
+
+        self.crt_shader = CustomCRT(
+            p_width,
+            p_height,
+            self.window.ctx
+        )
+
         # Настройка игры
         self.setup()
 
@@ -86,10 +95,13 @@ class MainGame(arcade.View):
 
     def on_draw(self):
         """Отрисовка всех объектов на экране"""
-        # Очищаем экран
+        self.crt_shader.use()
+        self.crt_shader.clear()
+
+        self.window.ctx.viewport = (0, 0, self.window.width, self.window.height)
+
         self.clear()
 
-        # Отрисовка уровня
         self.world_camera.use()
         self.platforms.draw()
         self.coins.draw()
@@ -104,6 +116,14 @@ class MainGame(arcade.View):
 
         # Отрисовка интерфейса (очков, уровня)
         self.batch.draw()
+
+        self.window.use()
+        self.window.clear()
+
+        self.window.ctx.viewport = (0, 0, self.window.width, self.window.height)
+        self.window.default_camera.use()
+
+        self.crt_shader.draw()
 
     def lose_life(self):
         """Потеря одной жизни"""
@@ -182,27 +202,22 @@ class MainGame(arcade.View):
 
     def complete_level(self):
         """Завершение текущего уровня"""
-        # self.game_state = GameState.LEVEL_COMPLETE
         game_view = CompleteMenu(self.score)
         self.window.show_view(game_view)
 
     def on_key_press(self, key, modifiers):
         """Обработка нажатия клавиш"""
-        if key == arcade.key.LEFT or key == arcade.key.A:
+        if key in (arcade.key.LEFT, arcade.key.A):
             self.player.change_x = -PLAYER_MOVEMENT_SPEED
-        elif key == arcade.key.RIGHT or key == arcade.key.D:
+        elif key in (arcade.key.RIGHT, arcade.key.D):
             self.player.change_x = PLAYER_MOVEMENT_SPEED
-        elif key == arcade.key.UP or key == arcade.key.SPACE:
+        elif key in (arcade.key.UP, arcade.key.SPACE, arcade.key.W):
             if self.physics_engine.can_jump():
                 self.player.change_y = PLAYER_JUMP_SPEED
-        elif key == arcade.key.ESCAPE:
-            self.game_state = GameState.PAUSED
 
     def on_key_release(self, key, modifiers):
         """Обработка отпускания клавиш"""
-        if key == arcade.key.LEFT or key == arcade.key.A:
-            if self.player.change_x < 0:
-                self.player.change_x = 0
-        elif key == arcade.key.RIGHT or key == arcade.key.D:
-            if self.player.change_x > 0:
-                self.player.change_x = 0
+        if key in (arcade.key.LEFT, arcade.key.A) and self.player.change_x < 0:
+            self.player.change_x = 0
+        elif key in (arcade.key.RIGHT, arcade.key.D) and self.player.change_x > 0:
+            self.player.change_x = 0

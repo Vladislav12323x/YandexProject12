@@ -5,7 +5,7 @@ import arcade
 # Константы
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
-SCREEN_TITLE = "Марио"
+SCREEN_TITLE = "Симулятор сантехника"
 
 # Константы для физики
 GRAVITY = 0.8

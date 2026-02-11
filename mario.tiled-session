@@ -15,11 +15,11 @@
             "scaleInEditor": 1
         },
         "l1.tmx": {
-            "scale": 0.49677083333333333,
+            "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 960.2013000629062,
-                "y": 641.1407003564688
+                "x": 962,
+                "y": 815
             }
         }
     },
@@ -29,12 +29,13 @@
     "map.tileHeight": 64,
     "map.tileWidth": 64,
     "openFiles": [
-        "l1.tmx"
+        "l1.tmx",
+        "first.tsx"
     ],
     "project": "mario.tiled-project",
     "recentFiles": [
-        "l1.tmx",
-        "first.tsx"
+        "first.tsx",
+        "l1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.type": 1
