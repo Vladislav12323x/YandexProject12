@@ -16,10 +16,18 @@
         },
         "l1.tmx": {
             "scale": 0.5,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 962,
-                "y": 815
+                "x": 868,
+                "y": 813
+            }
+        },
+        "l2.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 1668,
+                "y": 1030
             }
         }
     },

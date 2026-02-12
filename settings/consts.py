@@ -8,12 +8,12 @@ SCREEN_HEIGHT = 720
 SCREEN_TITLE = "Симулятор сантехника"
 
 # Константы для физики
-GRAVITY = 0.8
+GRAVITY = 0.65
 PLAYER_JUMP_SPEED = 15
 PLAYER_MOVEMENT_SPEED = 5
 
 # Масштаб спрайтов
-CHARACTER_SCALING = 0.04
+CHARACTER_SCALING = 0.17
 TILE_SCALING = 0.8
 ENEMY_SCALING = 1
 HEART_SCALING = 0.5
@@ -21,6 +21,9 @@ COIN_SCALE = 0.07
 
 # Камера
 CAMERA_LERP = 0.01
+
+# Эффекты
+SMOKE_TEX = arcade.make_soft_circle_texture(5, arcade.color.LIGHT_GRAY, 255, 80)
 
 
 # Константы для направления персонажа

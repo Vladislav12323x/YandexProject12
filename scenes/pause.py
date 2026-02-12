@@ -1,18 +1,17 @@
-from arcade.gui import UIFlatButton, UILabel, UIManager, UIAnchorLayout, UIBoxLayout
+from arcade.gui import UIAnchorLayout, UIBoxLayout, UIManager, UILabel, UIFlatButton
 
-from core.main_game import MainGame
 from core.shader import CustomCRT
 from scenes.settings import SettingsView
 from settings.consts import *
 
 
-class MenuView(arcade.View):
-    """Класс меню"""
-
-    def __init__(self):
+class PauseView(arcade.View):
+    def __init__(self, game_view, menu_view):
         super().__init__()
         self.background = arcade.load_texture("textures/menu_background.png")
 
+        self.menu_view = menu_view
+        self.game_view = game_view
         self.manager = UIManager()
         self.manager.enable()
 
@@ -32,7 +31,7 @@ class MenuView(arcade.View):
 
     def setup_widgets(self):
         """Настройка виджетов в меню"""
-        title = UILabel(text=SCREEN_TITLE,
+        title = UILabel(text="Пауза",
                         font_size=32,
                         text_color=arcade.color.WHITE,
                         width=400,
@@ -40,29 +39,23 @@ class MenuView(arcade.View):
                         bold=True)
         self.box_layout.add(title)
 
-        sub_title = UILabel(text="Специально для Яндекс Лицея",
-                            font_size=14,
-                            text_color=arcade.color.WHITE,
-                            width=400,
-                            align="center",
-                            bold=True)
-        self.box_layout.add(sub_title)
-
-        play_button = UIFlatButton(text="Играть", width=200, height=50)
-        play_button.on_click = lambda event: self.play()
+        play_button = UIFlatButton(text="Продолжить", width=200, height=50)
+        play_button.on_click = lambda event: self.continue_game()
         self.box_layout.add(play_button)
 
         settings_button = UIFlatButton(text="Настройки", width=200, height=50)
         settings_button.on_click = lambda event: self.settings()
         self.box_layout.add(settings_button)
 
-        exit_button = UIFlatButton(text="Выход", width=200, height=50)
-        exit_button.on_click = lambda event: arcade.exit()
+        exit_button = UIFlatButton(text="В меню", width=200, height=50)
+        exit_button.on_click = lambda event: self.menu()
         self.box_layout.add(exit_button)
 
-    def play(self):
-        game_view = MainGame(self)
-        self.window.show_view(game_view)
+    def continue_game(self):
+        self.window.show_view(self.game_view)
+
+    def menu(self):
+        self.window.show_view(self.menu_view)
 
     def settings(self):
         game_view = SettingsView(self)
@@ -83,7 +76,6 @@ class MenuView(arcade.View):
 
     def on_draw(self):
         """Отрисовка с исправлением масштабирования"""
-        # c шейдером 🥰🥰🥰
         self.crt_shader.use()
         self.crt_shader.clear()
 
@@ -99,3 +91,7 @@ class MenuView(arcade.View):
         self.window.default_camera.use()
 
         self.crt_shader.draw()
+
+    def on_key_press(self, key, modifiers):
+        if key == arcade.key.ESCAPE:
+            self.window.show_view(self.game_view)

@@ -77,6 +77,8 @@ class CustomCRT:
         )
 
     def use(self):
+        self.width = max(self.ctx.window.width, 1)
+        self.height = max(self.ctx.window.height, 1)
         self.framebuffer.use()
 
     def clear(self):

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.1-99-gec89c545" orientation="orthogonal" renderorder="right-down" width="70" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="1">
+ <tileset firstgid="1" source="first.tsx"/>
+ <layer id="1" name="coins" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt10kNADAMA8EUaYgWXFFUOTSDwK+VHAFMck/1AmCb1BWgIW0CfvCngI0evLsCOw==
+  </data>
+ </layer>
+ <layer id="3" name="flags" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztzgENAAAIA6Ab1v4VjPG5QQISAICenfYAAADgrwNlogBn
+  </data>
+ </layer>
+ <layer id="6" name="jump" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztzwENADAIwDDu3xGYw8QJ+dMq2CIAAADgXXW2C+7Kz34AmNXLLQF4
+  </data>
+ </layer>
+ <layer id="4" name="enemies" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt1ssJACEMRdGkM0vQ9ZTpyoLsQ9zKDAQ/6Mg9kKUhhEdQBMCfJBW3ewYAAIDVZv55gs7qBNh4MgeDNieW3NR71nvT4se7h7weKet43Yi9vCt4TSN6
+  </data>
+ </layer>
+ <layer id="5" name="other" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztllEKgCAMQJ3HjO5Q9NWl+oy8UPcIiagkc6mzZT4YCYXbXksS4owCQUIN52sKjrlsaww2JyGulOEjpKandcTyQgm3eaH6Lp7CzQsVLt/mfdNLivdF4SV23bqWCfxqUrCH6zkzp2uNyc0NrA8bXzh334DjuUudF7P/H+elePGnuLimeLkmdxf6v2fIqMeKSS9j4jpmWIOSRtLu76I/9Kdntr/pd/ORwsuXKF5wdDK/iEEr84sF+r9fjQ==
+  </data>
+ </layer>
+ <layer id="2" name="platforms" width="70" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjaIIZxoF0wOMFwCBdHGvhhOIQLLcBouGAHo+GCHQz1cLkIdP8lIL5MZX8M9XChFRgNF+yAmHCJZqK9OwYbGKnpxY+Av8kJl5GQfkZqeiEEiA2XWGAaiR8B6QQG8IXLQOSXb4wMDV+B+DsQ08qOa0A/X4Xi6zj8n8/EcIBW9pMCiA2PT0B/fB7AvI8cpoQwrjAnBtAjfZAK3ID5xBWK3amcZ14wEodB4fEUSD/FErZvgWLvgPg9ieGOLU2pAv2nxgSpn0G0+ggqK0fB0AUA/CA6xQ==
+  </data>
+ </layer>
+</map>
